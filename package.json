@@ -16,9 +16,6 @@
   "exports": {
     ".": "./index.js"
   },
-  "bin": {
-    "kschema-fs-api-gen-rest": "./bin/cli.js"
-  },
   "files": [
     "bin/",
     "index.js",

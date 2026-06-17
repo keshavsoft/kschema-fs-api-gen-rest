@@ -1,1 +1,1 @@
-export { default } from "./bin/v3/tasks/actions/index.js";
+export { default } from "./bin/v3/index.js";
