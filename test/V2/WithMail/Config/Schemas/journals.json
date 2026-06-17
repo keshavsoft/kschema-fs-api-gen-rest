@@ -87,7 +87,11 @@
         "width": "150px"
       },
       "isSearchable": false,
-      "dataListSource": "Dates.Date"
+      "dataListSource": "Dates.Date",
+      "isConsider": true,
+      "field": "AccountName",
+      "title": "AccountName",
+      "defaultValue": "KeshavSoft"
     }
   ]
 }

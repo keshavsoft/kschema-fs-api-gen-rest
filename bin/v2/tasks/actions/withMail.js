@@ -13,7 +13,9 @@ import { announce } from "./WithMail/steps/announce.js";
 import resolveFolderName from "./WithMail/steps/resolveFolderName.js";
 import actions from "./WithMail/actions.json" with { type: "json" };
 
-const startFunc = async ({ cmd = "", toPath, isAnnounce = true, checkBeforeCreate = true }) => {
+const startFunc = async ({ cmd = "", toPath, isAnnounce = true, checkBeforeCreate = true,
+    inTableName, toConfigPath
+}) => {
 
     const matched = actions;
 
@@ -48,7 +50,7 @@ const startFunc = async ({ cmd = "", toPath, isAnnounce = true, checkBeforeCreat
 
         createHttpFile({
             inTargetPath: path.join(localToPath, resolvedFolderName),
-            toPath: process.cwd()
+            toPath: process.cwd(), inTableName, toConfigPath
         });
     };
 
