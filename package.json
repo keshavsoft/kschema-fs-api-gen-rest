@@ -1,6 +1,6 @@
 {
   "name": "kschema-fs-api-gen-rest",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "start from end points js, generate post methods",
   "keywords": [
     "cli",
@@ -17,7 +17,7 @@
     ".": "./index.js"
   },
   "bin": {
-    "kschema-fs-api-gen-post-actions": "./bin/cli.js"
+    "kschema-fs-api-gen-rest": "./bin/cli.js"
   },
   "files": [
     "bin/",
