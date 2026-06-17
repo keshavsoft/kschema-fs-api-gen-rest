@@ -1,9 +1,7 @@
-// src/.../services/buildPostPayload.js
 import fs from "fs";
 import path from "path";
-import startFunc from "../../withMail";
 
-const startFunc = ({ workspacePath, inTableName, toConfigPath }) => {
+const startFunc = ({ workspacePath, toConfigPath }) => {
     const schemaPath = toConfigPath;
 
     if (!fs.existsSync(schemaPath)) return "{}";

@@ -2,12 +2,11 @@ import fs from "fs";
 import path from "path";
 import buildPostPayload from "./buildPostPayload.js";
 
-const createHttpFile = ({ inTargetPath, toPath, toConfigPath, inTableName }) => {
+const createHttpFile = ({ inTargetPath, toPath, toConfigPath }) => {
     const relative = inTargetPath.replace(toPath, "").replace(/\\/g, "/");
 
     const body = buildPostPayload({
-        workspacePath: toPath, toConfigPath,
-        inTableName
+        workspacePath: toPath, toConfigPath
     });
 
     const content = `GET http://localhost:3000${relative}
