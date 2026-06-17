@@ -12,8 +12,9 @@ import { announce } from "./WithMail/steps/announce.js";
 import resolveFolderName from "./WithMail/steps/resolveFolderName.js";
 import actions from "./WithMail/actions.json" with { type: "json" };
 
-const startFunc = async ({ toPath, toConfigPath }) => {
+const startFunc = ({ toPath, toConfigPath }) => {
     const localToPath = toPath;
+    console.log("toPath, toConfigPath : ", toPath, toConfigPath);
 
     createHttpFile({
         inTargetPath: localToPath,
