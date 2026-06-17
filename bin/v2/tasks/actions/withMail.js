@@ -13,48 +13,13 @@ import { announce } from "./WithMail/steps/announce.js";
 import resolveFolderName from "./WithMail/steps/resolveFolderName.js";
 import actions from "./WithMail/actions.json" with { type: "json" };
 
-const startFunc = async ({ cmd = "", toPath, isAnnounce = true, checkBeforeCreate = true,
-    inTableName, toConfigPath
-}) => {
-
-    const matched = actions;
-
+const startFunc = async ({ toPath, inTableName, toConfigPath }) => {
     const localToPath = toPath;
 
-    const resolvedFolderName = resolveFolderName({
-        name: cmd
+    createHttpFile({
+        inTargetPath: path.join(localToPath, resolvedFolderName),
+        toPath: process.cwd(), inTableName, toConfigPath
     });
-
-    if (resolvedFolderName.KTF === false) {
-        console.log(resolvedFolderName.KReason);
-
-        return;
-    };
-
-    const source = locateSource();
-    const destination = locateDestination({
-        inResolvedFolderName: resolvedFolderName,
-        toPath: localToPath
-    });
-
-    const createFolderResponse = createFolder({
-        source, destination,
-        isAnnounce, checkBeforeCreate
-    });
-
-    if (createFolderResponse.KTF) {
-        const fromEndPointsJs = await fixEndpointsJs({
-            jsFilePath: path.join(localToPath, "end-points.js"),
-            inCheckLines: matched.endPointsJs
-        });
-
-        createHttpFile({
-            inTargetPath: path.join(localToPath, resolvedFolderName),
-            toPath: process.cwd(), inTableName, toConfigPath
-        });
-    };
-
-    if (isAnnounce) announce({ inResolvedFolderName: resolvedFolderName });
 
     return resolvedFolderName;
 };
