@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const startFunc = ({ workspacePath, toConfigPath }) => {
+const startFunc = ({ toConfigPath }) => {
     const schemaPath = toConfigPath;
 
     if (!fs.existsSync(schemaPath)) return "{}";

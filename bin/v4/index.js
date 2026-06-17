@@ -2,14 +2,8 @@ import path from "path";
 
 import createHttpFile from "./createHttpFile.js";
 
-const startFunc = ({ toPath, toConfigPath }) => {
-    const localToPath = toPath;
-    console.log("toPath, toConfigPath : ", toPath, toConfigPath);
-
-    createHttpFile({
-        inTargetPath: localToPath,
-        toPath: process.cwd(), toConfigPath
-    });
+const startFunc = ({ toPath, toConfigPath, inTargetPath }) => {
+    createHttpFile({ toPath, toConfigPath, inTargetPath });
 
     return true;
 };
