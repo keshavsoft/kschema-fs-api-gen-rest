@@ -1,7 +1,7 @@
 import path from "path";
-import { withMail } from "../../index.js";
+import { load } from "../../index.js";
 
-withMail({
+load({
     toPath: process.cwd(),
     toConfigPath: path.join(process.cwd(), "Config", "Schemas", "journals.json"),
     showLog: true
