@@ -1,6 +1,6 @@
 {
   "name": "kschema-fs-api-gen-rest",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "create rest client to test from http file, config supplied",
   "keywords": [
     "cli",
@@ -9,9 +9,7 @@
     "node",
     "project-generator"
   ],
-  "dependencies": {
-    "express-fix-any-js": "^1.2.3"
-  },
+  "dependencies": {},
   "type": "module",
   "exports": {
     ".": "./index.js"
