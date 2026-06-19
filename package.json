@@ -1,6 +1,6 @@
 {
   "name": "kschema-fs-api-gen-rest",
-  "version": "1.5.4",
+  "version": "1.6.1",
   "description": "create rest client to test from http file, config supplied",
   "keywords": [
     "cli",
