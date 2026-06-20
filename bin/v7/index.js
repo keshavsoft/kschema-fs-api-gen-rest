@@ -3,17 +3,28 @@ import path from "path";
 import createHttpFile from "./createHttpFile.js";
 import getFile from "./getFile.js";
 import postFile from "./postFile.js";
+import deleteFile from "./deleteFile.js";
 
 const startFunc = ({ toPath, toConfigPath, inTargetPath, showLog = true,
-    inPort
+    inPort, inMethod
 }) => {
 
-    if (toConfigPath) {
-        if (showLog) console.log("post...");
-        // createHttpFile({ toPath, toConfigPath, inTargetPath });
-        postFile({ toPath, toConfigPath, inTargetPath, inPort });
+    if (inMethod) {
+        if (inMethod = "DELETE") {
+            if (showLog) console.log("start rest generate for post...");
+
+            deleteFile({ toPath, toConfigPath, inTargetPath, inPort });
+        };
     } else {
-        getFile({ toPath, inTargetPath, inPort });
+        if (toConfigPath) {
+            if (showLog) console.log("start rest generate for post...");
+
+            postFile({ toPath, toConfigPath, inTargetPath, inPort });
+        } else {
+            if (showLog) console.log("start rest generate for get...");
+
+            getFile({ toPath, inTargetPath, inPort });
+        };
     };
 
     return true;
